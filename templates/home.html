@@ -3,27 +3,38 @@
 {% block title%} Home {%endblock%}
 
 {% block content %}
+<div class="container">
 
-<h4 class="display-4">Enter a year and find out an interesting fact</h4>
-<form method="POST">
-    {{ form.hidden_tag() }}
-
-    {% for field in form
-        if field.widget.input_type != 'hidden' %}
-        <p>
-            {{field.label}}
-            {{field(class_="form-control")}}
-        </p>
-        <p>Year must be greater than 0 and less than 2022.</p>
-        <p>
-            {% for err in field.errors %}
-            <small class="form-text text-danger">
-            {{err}}
-            </small>
+  <h4 class="display-4 text-center">Enter a year and find out an interesting fact</h4>
+ <div class="jumbotron">
+  <div class="row justify-content-center">
+       <div class="col-md-8">
+        <form method="POST">
+            {{ form.hidden_tag() }}
+       
+            {% for field in form
+               if field.widget.input_type != 'hidden' %}
+               <p>
+                   {{field.label}}
+                   {{field(class_="form-control")}}
+               </p>
+               <p>Year must be greater than 0 and less than 2022.</p>
+               <p>
+                   {% for err in field.errors %}
+                   <small class="form-text text-danger">
+                   {{err}}
+                   </small>
+                   {% endfor %}
+                 </p>
             {% endfor %}
-          </p>
-    {% endfor %}
-    <button class="btn btn-sm btn-primary">Submit</button>        
-</form>
+            <button class="btn btn-sm btn-primary">Submit</button>        
+        </form>
+
+
+       </div>
+
+  </div>
+  </div>
+</div>
 
 {% endblock %}
