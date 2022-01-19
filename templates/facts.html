@@ -15,30 +15,33 @@
 
 <div class="container">
     <h1 class="display-4">History Facts</h1>
-    <table class="table table-striped ">
-      <thead class="thead-dark">
-        <th>Fact</th>
-        <th></th>
-        <th></th>
-        <th>Year</th>
-        <th>Note</th>
-      </thead>
-      <tbody>
-        {% for fact in facts %}
-        <tr>
-          <td>{{fact.fact}}</td>
-          <td><a class="btn btn-sm btn-info" href="/facts/{{fact.id}}/edit">Edit</a></td>
-          <td><a class="btn btn-sm btn-danger" href="/facts/{{fact.id}}/delete">Delete</a></td>
-          <td>{{fact.year}}</td>
-          {% if fact.note%}
-          <td>{{fact.note}}</td>
-          {% else %}
-          <td class="text-danger">NO NOTE</td>
-          {% endif %}
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+    <div class="row justify-content-center">
+      <table class="table table-striped ">
+        <thead class="thead-dark">
+          <th>Fact</th>
+          <th></th>
+          <th></th>
+          <th>Year</th>
+          <th>Note</th>
+        </thead>
+        <tbody>
+          {% for fact in facts %}
+          <tr>
+            <td>{{fact.fact}}</td>
+            <td><a class="btn btn-sm btn-info" href="/facts/{{fact.id}}/edit">Edit</a></td>
+            <td><a class="btn btn-sm btn-danger" href="/facts/{{fact.id}}/delete">Delete</a></td>
+            <td>{{fact.year}}</td>
+            {% if fact.note%}
+            <td>{{fact.note}}</td>
+            {% else %}
+            <td class="text-danger">NO NOTE</td>
+            {% endif %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
     <a class="btn btn-sm btn-primary" href="/">Add fact</a>
     </div>
 
