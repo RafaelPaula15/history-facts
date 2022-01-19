@@ -1,5 +1,7 @@
 ## History-facts
 
+This is the link to open and view the app already deployed. --> https://history-facts-app.herokuapp.com/
+
 Numbers web API: http://numbersapi.com  : is the API we're using to make requests.
 
 To get this application running, make sure you do the following in the Terminal:
