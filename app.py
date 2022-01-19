@@ -5,6 +5,7 @@ from werkzeug.wrappers import PlainRequest
 from models import db, connect_db, YearFact
 from forms import YearFactForm, NoteForm
 import requests
+import os
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///history-facts'
@@ -15,7 +16,7 @@ app.config['DEBUG_TB_INTERCEPT_REDIRECTS'] = False
 connect_db(app)
 db.create_all()
 
-app.config['SECRET_KEY'] = "I'LL NEVER TELL!!"
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'secret1')
 
 # uncomment this line to test post routes
 # app.config['WTF_CSRF_ENABLED'] = False
