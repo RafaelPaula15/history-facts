@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title%} Edit {%endblock%}
+
+{% block content %}
+
+
+<h4 class="display-4">Add a personal note to this fact</h4>
+<form method="POST">
+    {{ form.hidden_tag() }}
+
+    {% for field in form
+        if field.widget.input_type != 'hidden' %}
+        <table class="table table-striped ">
+            <thead class="thead-dark">
+                <th>Fact</th>
+                <th>Year</th>
+                <th>Note</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{fact.fact}}</td>
+                  <td>{{fact.year}}</td>
+                  {% if fact.note%}
+                  <td>{{fact.note}}</td>
+                  {% else %}
+                  <td class="text-danger">NO NOTE</td>
+                  {% endif %}
+                </tr>
+              </tbody>
+        </table>
+        <p>
+            {{field.label}}
+            {{field(class_="form-control")}}
+        </p>
+        <p>Field cannot be longer than 30 characters.</p>
+        <p>
+            {% for err in field.errors %}
+            <small class="form-text text-danger">
+            {{err}}
+            </small>
+            {% endfor %}
+          </p>
+    {% endfor %}
+    <button class="btn btn-sm btn-success">Save</button>        
+</form>
+
+{% endblock %}
