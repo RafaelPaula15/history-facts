@@ -8,7 +8,7 @@ class YearFactForm(FlaskForm):
     """Form for adding a new fact."""
 
     year = IntegerField('Enter a year',
-                            [validators.NumberRange(min=1, max=2022, message="year must be greater than 0 and less than 2022"),
+                            [validators.NumberRange(min=1, max=2022, message="year must be greater than 0 and less than 2023"),
                              validators.required()])
 
 
