@@ -19,7 +19,7 @@ To get this application running, make sure you do the following in the Terminal:
 
 Users can enter a number(a year) between 1 to 2022.
 Next, user will get back an interesting fact about that year.
-In the facts page, users will be able to see the last 5 requests made.
+In the facts page, users will be able to see the last 10 requests made.
 There's also an edit button where users can add or edit a personal note.
 And there're a delete which would delete a year along with its fact.
 For this application facts about any year and notes are being saved in a database.
